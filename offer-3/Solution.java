@@ -1,15 +1,56 @@
+import java.util.ArrayList;
+
+
 public class Solution {
 
-//胜多负少发送到山东省水电费水电费水电费
-	/**
-	sfsdfsdfsdf
-	斯蒂芬斯蒂芬王夫人无人
-	*/
+
+	class ListNode {
+		int val ;
+		ListNode next = null;
+
+		ListNode(int val) {
+			this.val = val;
+		}
+	}
+	class Link {
+		ListNode head = null;
+		void addListNode(ListNode node) {
+			if (null == head) {
+				head = node;
+				return;
+			}else {
+				ListNode temp = head;
+				while(null != head.next) {
+					 temp = temp.next;
+				}
+				temp.next = node;
+			}
+
+		}
+	}
+
+	public static ArrayList<Integer> printTail2Head(Link Link) {
+		ArrayList<Integer> result = new ArrayList<Integer>();
+
+
+
+		return result;
+
+
+	}
+
 
 	public static void main(String[] args) {
-		String a = "";
-    String b = "12"+"3";
-    System.out.println("" == a);
-    System.out.println(a.equals(b));
+		
+		ListNode a = new ListNode(1);
+		ListNode b = new ListNode(2);
+		ListNode c = new ListNode(3);
+		ListNode d = new ListNode(4);
+		Link link = new Link();
+		link.addListNode(a);
+		link.addListNode(b);
+		link.addListNode(c);
+		link.addListNode(d);
+
 	}
 }
