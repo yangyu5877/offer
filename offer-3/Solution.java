@@ -3,6 +3,8 @@ import java.util.ArrayList;
 
 public class Solution {
 
+	private static ArrayList<Integer> result = new ArrayList<Integer>();
+
 
 	class ListNode {
 		int val ;
@@ -20,7 +22,7 @@ public class Solution {
 				return;
 			}else {
 				ListNode temp = head;
-				while(null != head.next) {
+				while(null != temp.next) {
 					 temp = temp.next;
 				}
 				temp.next = node;
@@ -29,28 +31,42 @@ public class Solution {
 		}
 	}
 
-	public static ArrayList<Integer> printTail2Head(Link Link) {
-		ArrayList<Integer> result = new ArrayList<Integer>();
-
-
-
-		return result;
-
-
+	public static ArrayList<Integer> printTail2Head(Link link) {
+		
+		if (null == link || null == link.head) {
+			return result;
+		}else {
+			return printTail2Head(link.head);
+		}
+		
 	}
 
+	public static ArrayList<Integer> printTail2Head(ListNode node) {
+		ListNode temp = node;
+			if(null != temp) {
+				printTail2Head(temp.next);
+				result.add(temp.val);
+			}
+			return result;
+			
+		}
+	
 
 	public static void main(String[] args) {
-		
-		ListNode a = new ListNode(1);
-		ListNode b = new ListNode(2);
-		ListNode c = new ListNode(3);
-		ListNode d = new ListNode(4);
-		Link link = new Link();
+		Solution solution = new Solution();
+		ListNode a = solution.new ListNode(1);
+		ListNode b = solution.new ListNode(2);
+		ListNode c = solution.new ListNode(3);
+		ListNode d = solution.new ListNode(4);
+		Link link = solution.new Link();
 		link.addListNode(a);
 		link.addListNode(b);
 		link.addListNode(c);
 		link.addListNode(d);
+
+		for(Integer i : printTail2Head(link)) {
+			System.out.println(i);
+		}
 
 	}
 }
