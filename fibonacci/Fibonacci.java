@@ -24,35 +24,48 @@ public class Fibonacci {
 			return result;
 		}
 	}
+	//灏鹃�掑綊
+	public static int finonacciTailRecursion(int n) {
+		return finonacciTailRecursionHelp(n, 0, 1, 3);
+	}
+
+	private static int finonacciTailRecursionHelp(int n, int first, int sec, int num) {
+		if (n <= 0) {
+			return 0;
+		}else if(n < num) {
+			return sec;
+		}else {
+			return finonacciTailRecursionHelp(n-1, sec, first+sec, num);
+		}
+	}
 	
 	
 	
 	
 	public static void main(String[] args) {
-		System.out.println("结果是：" + fibonacci(0));
-		System.out.println("结果是：" + fibonacci(1));
-		System.out.println("结果是：" + fibonacci(2));
-		System.out.println("结果是：" + fibonacci(3));
-		System.out.println("结果是：" + fibonacci(10));
+		System.out.println("甯歌缁撴灉鏄細" + fibonacci(10));
+		System.out.println("寰幆缁撴灉鏄細" + fibonacci(10));
+		System.out.println("灏鹃�掑綊缁撴灉鏄細" + fibonacci(10));
+
+
+
+		// System.out.println("缁撴灉鏄細" + fibonacci(1));
+		// System.out.println("缁撴灉鏄細" + fibonacci(2));
+		// System.out.println("缁撴灉鏄細" + fibonacci(3));
+		// System.out.println("缁撴灉鏄細" + fibonacci(10));
 		
-		long startTime = System.currentTimeMillis();
-		System.out.println("结果是：" + fibonacci(40));
-		long endTime = System.currentTimeMillis();
-		long totalTime = endTime - startTime;
-		System.out.println("耗时：" + totalTime);
+		// long startTime = System.currentTimeMillis();
+		// System.out.println("缁撴灉鏄細" + fibonacci(40));
+		// long endTime = System.currentTimeMillis();
+		// long totalTime = endTime - startTime;
+		// System.out.println("潞脛脢卤拢潞" + totalTime);
 		
-		 startTime = System.currentTimeMillis();
-		System.out.println("结果是：" + fibonacciNew(40));
-		 endTime = System.currentTimeMillis();
+		//  startTime = System.currentTimeMillis();
+		// System.out.println("缁撴灉鏄細" + fibonacciNew(40));
+		//  endTime = System.currentTimeMillis();
+		// totalTime = endTime - startTime;
 		
-		
-		
-		
-		
-		
-		totalTime = endTime - startTime;
-		
-		System.out.println("耗时：" + totalTime);
+		// System.out.println("潞脛脢卤拢潞" + totalTime);
 		
 	}
 }
