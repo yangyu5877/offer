@@ -26,7 +26,7 @@ static class BinaryTreeNode {
 		while (index < ie && val != inOrder[index]) {index++;}
 		BinaryTreeNode node = new BinaryTreeNode();
 		node.value = val;
-		node.left = construct(preOrder, ps + 1, ps + index, inOrder, is, index - 1);
+		node.left = construct(preOrder, ps + 1, ps + index - is, inOrder, is, index - 1);
 		node.right = construct(preOrder, ps + index -is + 1, pe, inOrder, index + 1, ie);
 		return node;
 	}
@@ -53,7 +53,7 @@ static class BinaryTreeNode {
 		if (node != null) {
 			inOrderTree(node.left);
 			System.out.println(node.value);
-			inOrderTree(node.right);
+			preOrderTree(node.right);
 		}
 	}
 
